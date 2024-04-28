@@ -1,4 +1,4 @@
-# Episode-01 Code Samples
+# Episode-01: Handling Date/Time - JS and Ruby
 
 Welcome to code samples for episode-01 of Full Stacked!
 
