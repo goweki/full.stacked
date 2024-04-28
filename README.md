@@ -2,7 +2,7 @@
 
 Welcome to the Full Stacked repository! This repo contains code created and curated for the Full Stacked video episodes:
 
-- Full Stacked: [`youtube.com/@full.stacked`](https://youtube.com/@full.stacked).
+- Full Stacked: [`youtube.com/@full.stacked`](https://youtube.com/@full.stacked)
 
 We explore technology, design, and development: Taking a look at technical tools and operations, while also exploring the dynamic and ever-evolving African technology landscape.
 
