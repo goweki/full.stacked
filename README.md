@@ -1,4 +1,4 @@
-# Full.stacked Code Samples
+# Full.Stacked Code Samples
 
 Welcome to the Full Stacked repository! This repo contains code created and curated for the Full Stacked video episodes:
 
