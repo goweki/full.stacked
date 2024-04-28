@@ -6,28 +6,32 @@ Welcome to episode-01 of Full Stacked!
 
 - [`youtube.com/@full.stacked`](https://youtube.com/@full.stacked)
 
-## Usage
+## JS code directory
 
-1.  **Clone the repository**:
-    git clone https://github.com/goweki/full.stacked.git
+**Clone the repository (if you haven't already)**:
+git clone https://github.com/goweki/full.stacked.git
 
-2.  **Navigate into directory**:
+1.  **Navigate into the js directory**:
 
     ```bash
     cd ./full.stacked/episode01/js
     ```
 
-3.  **Install dependencies** (if any):
+2.  **Install dependencies** (if any):
 
     ```bash
     npm i
     ```
 
-4.  **Run code**:
+3.  **Run code**:
 
     ```bash
     node main.js
     ```
+
+## TS code directory
+
+## RUBY code directory
 
 ## Contact
 

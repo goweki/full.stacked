@@ -1,4 +1,4 @@
-# Full Stacked
+# Handling date and time
 
 Welcome to the Full Stacked repository! This repo contains code created and curated for the Full Stacked video episodes:
 
