@@ -1,6 +1,6 @@
-# Full Stacked: Episode-01
+# Episode-01 Code Samples
 
-Welcome to episode-01 of Full Stacked!
+Welcome to code samples for episode-01 of Full Stacked!
 
 ## Episode
 
@@ -32,9 +32,3 @@ git clone https://github.com/goweki/full.stacked.git
 ## TS code directory
 
 ## RUBY code directory
-
-## Contact
-
-Have a question or just want to say hello? Reach out to us on Youtube or via email at full.stacked@goweki.com.
-
-## Let’s embark on this vlogging journey together! 🎥✨
