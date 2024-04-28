@@ -22,7 +22,7 @@ Have a question or just want to say hello? Reach out to us on Youtube or via ema
 
 Uncopyright - No permissions are needed to copy, distribute or modify the code in this repository.
 
-Credit is appreciated but not required
+Credit is appreciated but not required.
 
 Terms and Conditions: _Do Whatever the Hell You Like_
 
