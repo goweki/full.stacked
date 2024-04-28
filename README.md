@@ -26,4 +26,4 @@ Credit is appreciated but not required.
 
 Terms and Conditions: _Do Whatever the Hell You Like_
 
-## Let’s embark on this vlogging journey together! 🎥✨
+## Let’s explore technology together! 🎥✨
