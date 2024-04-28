@@ -12,9 +12,13 @@ Welcome to episode-01 of Full Stacked!
     git clone https://github.com/goweki/full.stacked.git
 
 2.  **Navigate into directory**:
-    cd ./full.stacked
+
+    ```bash
+    cd ./full.stacked/episode01/js
+    ```
 
 3.  **Install dependencies** (if any):
+
     ```bash
     npm i
     ```
@@ -24,3 +28,7 @@ Welcome to episode-01 of Full Stacked!
 Have a question or just want to say hello? Reach out to us on Youtube or via email at full.stacked@goweki.com.
 
 ## Let’s embark on this vlogging journey together! 🎥✨
+
+```
+
+```
