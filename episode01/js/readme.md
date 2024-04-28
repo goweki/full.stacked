@@ -23,12 +23,14 @@ Welcome to episode-01 of Full Stacked!
     npm i
     ```
 
+4.  **Run code**:
+
+    ```bash
+    node main.js
+    ```
+
 ## Contact
 
 Have a question or just want to say hello? Reach out to us on Youtube or via email at full.stacked@goweki.com.
 
 ## Let’s embark on this vlogging journey together! 🎥✨
-
-```
-
-```

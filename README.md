@@ -18,4 +18,12 @@ We’d love to hear from you! If you have ideas for future episodes, questions, 
 
 Have a question or just want to say hello? Reach out to us on Youtube or via email at full.stacked@goweki.com.
 
+## License
+
+Uncopyright - No permissions are needed to copy, distribute or modify the code in this repository.
+
+Credit is appreciated but not required
+
+Terms and Conditions: _Do Whatever the Hell You Like_
+
 ## Let’s embark on this vlogging journey together! 🎥✨
