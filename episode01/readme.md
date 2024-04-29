@@ -32,3 +32,30 @@ git clone https://github.com/goweki/full.stacked.git
 ## TS code directory
 
 ## RUBY code directory
+
+1. Check if your development environment has ruby installed
+
+   ```bash
+   ruby -v
+   ```
+
+   It should print the ruby version you are running e.g. `ruby 3.2.2 (2023-03-30 revision e51014f9c0) [arm64-darwin21]`
+
+   If the above command failed, then you should first install ruby. Use the following [Guide](https://www.ruby-lang.org/en/documentation/installation/)
+
+2. Navigate into the ruby directory:
+
+   ```bash
+   cd ./full.stacked/episode01/ruby
+   ```
+
+3. Install the [TZinfo gem](https://github.com/tzinfo/tzinfo):
+
+   ```bash
+   gem install tzinfo
+   ```
+
+4. Run code:
+   ```bash
+   ruby main.rb
+   ```
