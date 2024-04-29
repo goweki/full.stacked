@@ -17,19 +17,35 @@ git clone https://github.com/goweki/full.stacked.git
     cd ./full.stacked/episode01/js
     ```
 
-2.  **Install dependencies** (if any):
-
-    ```bash
-    npm i
-    ```
-
-3.  **Run code**:
+2.  **Run code**:
 
     ```bash
     node main.js
     ```
 
 ## TS code directory
+
+**Clone the repository (if you haven't already)**:
+git clone https://github.com/goweki/full.stacked.git
+
+1.  **Navigate into the ts directory**:
+
+    ```bash
+    cd ./full.stacked/episode01/ts
+    ```
+
+2.  **Compile transcript code**:
+
+    ```bash
+    npm install -g typescript
+    tsc main.ts
+    ```
+
+3.  **Run the compiled js file**
+
+```bash
+node main.js
+```
 
 ## RUBY code directory
 
