@@ -10,7 +10,7 @@ interface EpochInterface {
   getEpochTime(): number;
 }
 
-export class CustomDate
+export default class CustomDate
   implements GreetingInterface, TimeInterface, EpochInterface
 {
   private date: Date;
