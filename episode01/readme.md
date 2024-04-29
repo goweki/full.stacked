@@ -28,12 +28,6 @@ git clone https://github.com/goweki/full.stacked.git
 
 ## RUBY code directory
 
-**Clone the repository (if you haven't already)**:
-
-```bash
-git clone https://github.com/goweki/full.stacked.git
-```
-
 1. Check if your development environment has ruby installed
 
    ```bash
@@ -63,12 +57,6 @@ git clone https://github.com/goweki/full.stacked.git
 
 ## TS code directory
 
-**Clone the repository (if you haven't already)**:
-
-```bash
-git clone https://github.com/goweki/full.stacked.git
-```
-
 1.  **Navigate into the ts directory**:
 
     ```bash
@@ -84,6 +72,6 @@ git clone https://github.com/goweki/full.stacked.git
 
 3.  **Run the compiled js file**
 
-```bash
-node main.js
-```
+    ```bash
+    node main.js
+    ```
