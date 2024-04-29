@@ -9,7 +9,10 @@ Welcome to code samples for episode-01 of Full Stacked!
 ## JS code directory
 
 **Clone the repository (if you haven't already)**:
+
+```bash
 git clone https://github.com/goweki/full.stacked.git
+```
 
 1.  **Navigate into the js directory**:
 
@@ -23,31 +26,13 @@ git clone https://github.com/goweki/full.stacked.git
     node main.js
     ```
 
-## TS code directory
+## RUBY code directory
 
 **Clone the repository (if you haven't already)**:
-git clone https://github.com/goweki/full.stacked.git
-
-1.  **Navigate into the ts directory**:
-
-    ```bash
-    cd ./full.stacked/episode01/ts
-    ```
-
-2.  **Compile transcript code**:
-
-    ```bash
-    npm install -g typescript
-    tsc main.ts
-    ```
-
-3.  **Run the compiled js file**
 
 ```bash
-node main.js
+git clone https://github.com/goweki/full.stacked.git
 ```
-
-## RUBY code directory
 
 1. Check if your development environment has ruby installed
 
@@ -75,3 +60,30 @@ node main.js
    ```bash
    ruby main.rb
    ```
+
+## TS code directory
+
+**Clone the repository (if you haven't already)**:
+
+```bash
+git clone https://github.com/goweki/full.stacked.git
+```
+
+1.  **Navigate into the ts directory**:
+
+    ```bash
+    cd ./full.stacked/episode01/ts
+    ```
+
+2.  **Compile transcript code**:
+
+    ```bash
+    npm install -g typescript
+    tsc main.ts
+    ```
+
+3.  **Run the compiled js file**
+
+```bash
+node main.js
+```
