@@ -45,6 +45,6 @@ export default class CustomDate
   }
 
   getEpochTime(): number {
-    return Math.floor(this.date.getTime() / 1000);
+    return this.date.getTime();
   }
 }
