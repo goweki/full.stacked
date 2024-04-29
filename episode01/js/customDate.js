@@ -32,3 +32,5 @@ class CustomDate {
     return Math.floor(this.date.getTime() / 1000);
   }
 }
+
+module.exports = CustomDate;
