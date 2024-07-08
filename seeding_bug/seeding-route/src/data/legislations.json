@@ -1,0 +1,25 @@
+[
+    {
+      "title": "The Affordable Housing Act, 2024",
+      "description": "AN ACT of Parliament to give effect to Article 43(1)(b) of the Constitution; to provide a framework for development and access to affordable housing and institutional housing; and for connected purposes ENACTED",
+      "status": "closed",
+      "type": "ACT",
+      "origin": "Executive",
+      "mover": "Ministry of Lands, Public Works, Housing and Urban Development",
+      "objectives": ["Create employment", "Provide affordable housing"]
+    },
+    {
+      "title": "The Kenya Sign Language Bill, 2024",
+      "description": "AN ACT of Parliament to give effect to Articles 7(3)(b), 44, 50(2)(m), 54(l )(d) and 120 of the Constitution; to establish the Kenyan Sign Language Council for the regulation of sign language interpretation in Kenya and to provide for the recognition, promotion and use of Kenyan Sign Language and for connected pur poses",
+      "status": "open",
+      "type": "BILL",
+      "concernsCounties": false,
+      "moneyBill": false,
+      "objectives": [
+        "provide a framework for the recognition, promotion, research, preservation and development of the use of the Kenyan Sign Language as contemplated under Article 7(3)(b) and 120 of the Constitution;",
+        "facilitate access to information, educational institutions and facilities as contemplated under Article 54(1) of the Constitution",
+        "provide a framework for the inclusion of the Deaf, hard of hearing and Deafblind community in all aspects of the society , in order to eliminate all forms of discrimination including in areas of communication, employment, information and education;",
+        "regulate sign language interpretation in Kenya through registration of sign language interpreters."
+      ]
+    }
+  ]
