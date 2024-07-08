@@ -1,0 +1,246 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mongodb"
+    url      = env("MONGODB_URL")
+}
+
+// Users for AUTH
+enum userRole {
+    USER
+    SUPERVISOR
+    ADMIN
+}
+
+model User {
+    id               String    @id @default(auto()) @map("_id") @db.ObjectId
+    name             String?
+    tel              String?   @unique
+    email            String?   @unique
+    password         String?
+    role             userRole  @default(USER)
+    avatar           String?
+    resetToken       String?
+    resetTokenExpiry DateTime?
+
+    @@map("users")
+}
+
+// 
+
+enum status {
+    open
+    closed
+}
+
+enum majorityType {
+    SIMPLE
+    TWO_THIRDS
+}
+
+enum legislationType {
+    BILL
+    ACT
+}
+
+model Legislation {
+    id          String @id @default(auto()) @map("_id") @db.ObjectId
+    title       String @unique
+    description String
+
+    status           status            @default(open)
+    // majorityType     majorityType      @default(SIMPLE) //would only help with automation
+    type             legislationType   @default(BILL) // "Bill" or "Act"
+    origin           String? //paliamentary party, executive,mp, Committee of the house, public, etc
+    mover            String?
+    concernsCounties Boolean           @default(false)
+    moneyBill        Boolean           @default(false)
+    objectives       String[] // objectives and reasons for the bill: motivations,why
+    firstReading     FirstReading?
+    secondReading    SecondReading?
+    committeeStage   CommitteeStage?
+    reportStage      ReportStage?
+    thirdReading     ThirdReading?
+    presidentsAssent PresidentsAssent?
+    referral         Referral?
+
+    votes  Vote[]
+    Debate Contribution[]
+
+    @@map("legislations")
+}
+
+model Constituency {
+    id         String @id @default(auto()) @map("_id") @db.ObjectId
+    number     Int?   @unique
+    name       String @unique
+    county     String
+    population Int?
+
+    mp Mp?
+
+    @@map("constituencies")
+}
+
+model Mp {
+    id          String  @id @default(auto()) @map("_id") @db.ObjectId
+    firstName   String?
+    lastName    String
+    otherName   String?
+    party       String?
+    photoUrl    String?
+    appointment String?
+
+    constituencyId String?       @unique @db.ObjectId //optional coz some Ps are nominated, ie- no constituency
+    constituency   Constituency? @relation(fields: [constituencyId], references: [id])
+
+    debates Contribution[]
+    votes   Vote[]
+
+    @@unique([firstName, lastName, party])
+    @@map("mps")
+}
+
+model FirstReading {
+    id                  String   @id @default(auto()) @map("_id") @db.ObjectId
+    date                DateTime @default(now()) @db.Date
+    publicParticipation Boolean  @default(false)
+    memoranda           String[] //audio/video/document link
+    publicHearings      String[]
+    stakeholders        String[]
+    expertConsultation  String[]
+    committeeReport     String?
+
+    legislationId String      @unique @db.ObjectId
+    legislation   Legislation @relation(fields: [legislationId], references: [id])
+
+    @@map("firstReadings")
+}
+
+type aggregateVote {
+    supporters Int
+    opposers   Int
+}
+
+model SecondReading {
+    id     String        @id @default(auto()) @map("_id") @db.ObjectId
+    date   DateTime      @default(now()) @db.Date
+    debate String? //audio/video/document link
+    vote   aggregateVote
+
+    legislationId String      @unique @db.ObjectId
+    legislation   Legislation @relation(fields: [legislationId], references: [id])
+
+    @@map("secondReadings")
+}
+
+type ammendment {
+    recommendation String
+    vote           aggregateVote?
+}
+
+model CommitteeStage {
+    id         String       @id @default(auto()) @map("_id") @db.ObjectId
+    date       DateTime     @default(now()) @db.Date
+    amendments ammendment[]
+    report     String? //link to final report
+
+    legislationId String      @unique @db.ObjectId
+    legislation   Legislation @relation(fields: [legislationId], references: [id])
+
+    @@map("committeeStages")
+}
+
+model ReportStage {
+    id     String   @id @default(auto()) @map("_id") @db.ObjectId
+    date   DateTime @default(now()) @db.Date
+    report String //link to report from committee stage 
+
+    legislationId String      @unique @db.ObjectId
+    legislation   Legislation @relation(fields: [legislationId], references: [id])
+
+    @@map("reportStages")
+}
+
+model ThirdReading {
+    id   String   @id @default(auto()) @map("_id") @db.ObjectId
+    date DateTime @default(now()) @db.Date
+
+    legislationId String      @unique @db.ObjectId
+    legislation   Legislation @relation(fields: [legislationId], references: [id])
+
+    @@map("thirdReadings")
+}
+
+enum assentType {
+    ASSENT
+    REFER
+}
+
+model PresidentsAssent {
+    id         String     @id @default(auto()) @map("_id") @db.ObjectId
+    date       DateTime   @default(now()) @db.Date
+    type       assentType @default(ASSENT) // "ASSENT" or "REFER"
+    memorandum String?
+
+    legislationId String      @unique @db.ObjectId
+    legislation   Legislation @relation(fields: [legislationId], references: [id])
+
+    @@map("presidentialAssents")
+}
+
+enum referralDecision {
+    AMMEND
+    NOT_AMMEND
+}
+
+model Referral {
+    id            String           @id @default(auto()) @map("_id") @db.ObjectId
+    date          DateTime         @default(now()) @db.Date
+    changes       String[]
+    finalDecision referralDecision @default(AMMEND) // "Amended" or "Passed without amendments"
+
+    legislationId String      @unique @db.ObjectId
+    legislation   Legislation @relation(fields: [legislationId], references: [id])
+
+    @@map("referrals")
+}
+
+enum contributionPosition {
+    SUPPORT
+    OPPOSE
+}
+
+model Contribution {
+    id   String   @id @default(auto()) @map("_id") @db.ObjectId
+    date DateTime @default(now()) @db.Date
+
+    legislationId String      @db.ObjectId
+    legislation   Legislation @relation(fields: [legislationId], references: [id])
+    mpId          String      @db.ObjectId
+    mp            Mp          @relation(fields: [mpId], references: [id])
+
+    position contributionPosition @default(OPPOSE)
+
+    @@map("Debate")
+}
+
+enum voteValue {
+    YES
+    NO
+    ABSTAIN
+}
+
+model Vote {
+    id   String    @id @default(auto()) @map("_id") @db.ObjectId
+    vote voteValue @default(ABSTAIN) // "YES", "NO", "ABSTAIN"
+    date DateTime  @default(now()) @db.Date
+
+    legislationId String      @db.ObjectId
+    legislation   Legislation @relation(fields: [legislationId], references: [id])
+
+    mpId String @db.ObjectId
+    mp   Mp     @relation(fields: [mpId], references: [id])
+}
